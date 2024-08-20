@@ -10,10 +10,13 @@ document.addEventListener("change", handleMetalChoice)
 export const Metals = async () => {
     const response = await fetch("http://localhost:8088/metals")
     const metals = await response.json();
-    let html = `<div id="metal-choices">`
+    let html = `<div id="metal-choices" >`
     for (const metal of metals) {
-        html += `<input type="radio" name="metals" value=${metal.id}>${metal.metal} `
+        html += `<div class="form-check">
+                    <input type="radio" name="metals" class="form-check-input me-1" value=${metal.id}> ${metal.metal} 
+                </div>`
         
     }
     return html
+
 }

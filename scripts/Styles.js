@@ -12,7 +12,7 @@ export const Styles = async () => {
     let html = `<div id="style-choices">`
     const divStringArray = styles.map(style =>{
         return `<div class="style">
-                    <input type="radio" name="styles" value="${style.id}">${style.style}
+                    <input type="radio" name="styles"  value="${style.id}">${style.style}
                 </div>` 
     })
     html += divStringArray.join("")

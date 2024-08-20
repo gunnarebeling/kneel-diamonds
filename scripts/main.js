@@ -11,36 +11,47 @@ const render = async () =>{
     const SubmitButtonHTML = SubmitButton()
     const orderList = await OrderList()
      let HTML = `
-        <h1>Kneel Diamonds</h1>
-
-        <article class="choices">
-            <section class="choices__metals options">
-                <h2>Metals</h2>
-                ${metals}
-            </section>
-
-            <section class="choices__sizes options">
-                <h2>Sizes</h2>
-                ${sizesHTML}
-            </section>
-
-            <section class="choices__styles options">
-                <h2>Styles</h2>
-                ${stylesHTML}
-            </section>
+        <div class="container text-center my-3 ">
+            <h1>Kneel Diamonds</h1>
+        </div>
+    <div class="border mx-4 bg-white p-3">
+        <article class="choices" class=>
+        <div class="container  ">
+            <div class="row  justify-content-center" style="gap: 50px">
+                <div class="col-xxs-12 col-md-3 border   px-4">
+                    <section class="choices__metals options p-3">
+                        <h2 class="text-center">Metals</h2>
+                        ${metals}
+                    </section>
+                </div>
+                <div class="col-xxs-12 col-md-3  border    ">
+                    <section class="choices__sizes options p-3 px-4">
+                        <h2 class="text-center">Sizes</h2>
+                        ${sizesHTML}
+                    </section>
+                </div>
+                <div class="col-xxs-12  col-md-3 border   px-4 ">
+                    <section class="choices__styles options p-3">
+                        <h2 class="text-center">Styles</h2>
+                        ${stylesHTML}
+                    </section>
+                </div>
+            </div>
+        </div>
         </article>
 
-        <article class="order">
+        <article class="order text-center m-5">
             ${SubmitButtonHTML}
 
 
         </article>
 
-        <article class="customOrders">
+        <article class="customOrders  m-3 d-inline-block border">
             <h2>Custom Jewelry Orders</h2>
             ${orderList}
-
+    </div>
         </article>
+    
     `
     const mainSection = document.querySelector("#main-section")
     mainSection.innerHTML = HTML
