@@ -1,3 +1,12 @@
+import { setMetalChoice } from "./transientState.js";
+
+const handleMetalChoice = (event) => {
+    if (event.target.name === "metals") {
+        setMetalChoice(parseInt(event.target.value))
+    }
+}
+document.addEventListener("change", handleMetalChoice)
+
 export const Metals = async () => {
     const response = await fetch("http://localhost:8088/metals")
     const metals = await response.json();
